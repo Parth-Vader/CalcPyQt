@@ -37,6 +37,7 @@ class calculator(QDialog):
  
         #adding a button with QPushButton
         plus=QPushButton("+")
+        plus.setToolTip('To add the numbers.')
  
         #connect means when user click a button calling a def
         grid.connect(plus, SIGNAL("pressed()"), self.addition )
@@ -45,14 +46,17 @@ class calculator(QDialog):
         grid.addWidget(plus,3,0,1,1)
  
         minus=QPushButton("-")
+        minus.setToolTip('To subtract the second number from the first.')
         grid.connect(minus, SIGNAL("pressed()"), self.subtraction )
         grid.addWidget(minus,3,1,1,1)
  
         multi=QPushButton("*")
+        multi.setToolTip('To multiply the numbers.')
         grid.connect(multi, SIGNAL("pressed()"),self.multiplication)
         grid.addWidget(multi,3,2,1,1)
  
         div=QPushButton("/")
+        div.setToolTip('To divide the first number by the second.')
         grid.connect(div, SIGNAL("pressed()"),self.division )
         grid.addWidget(div,3,3,1,1)
  
@@ -60,7 +64,7 @@ class calculator(QDialog):
         grid.addWidget(self.result,4,1)
  
         self.setLayout(grid)
-        self.setWindowTitle("Hesap Makinesi")
+        self.setWindowTitle("Parth's Calculator")
  
     #with connect function we calls this class def
     def addition(self):
