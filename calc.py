@@ -85,6 +85,17 @@ class calculator(QDialog):
     def division(self):
         div=float(self.firstNumber.text()) / float(self.secondNumber.text())
         self.result.setText("%.2f"%div)
+
+    def closeEvent(self, event):
+        
+        reply = QMessageBox.question(self, 'Message',
+            "Do you really want to quit me?", QMessageBox.Yes | 
+            QMessageBox.No, QMessageBox.No)
+
+        if reply == QMessageBox.Yes:
+            event.accept()
+        else:
+            event.ignore()   
  
 #QApplication starts qt
 app=QApplication([])
